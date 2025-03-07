@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concesionario de Vehículos de Alta Gama</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de navegación de tipos de vehículos -->
+    <div class="navbar" style="display: none;">
+        <ul>
+            <li><a href="#" id="fourDoorsBtn">4 Puertas</a></li>
+            <li><a href="#" id="twoDoorsBtn">2 Puertas</a></li>
+            <li><a href="#" id="fourX4Btn">4x4</a></li>
+            <li><a href="#" id="sportsBtn">Deportivos</a></li>
+        </ul>
+    </div>
+
+    <!-- Login / Registro -->
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Nombre de usuario" required>
+                <input type="password" id="loginPassword" placeholder="Contraseña" required>
+                <button type="submit" class="btn-submit">Iniciar sesión</button>
+            </form>
+            <p>No tienes cuenta? <a href="#" id="toRegister">Registrarse</a></p>
+        </div>
+    </div>
+
+    <div class="register-container" style="display: none;">
+        <div class="login-box">
+            <h2>Registrarse</h2>
+            <form id="registerForm">
+                <input type="text" id="registerUsername" placeholder="Nombre de usuario" required>
+                <input type="password" id="registerPassword" placeholder="Contraseña" required>
+                <button type="submit" class="btn-submit">Registrar</button>
+            </form>
+            <p>¿Ya tienes cuenta? <a href="#" id="toLogin">Iniciar sesión</a></p>
+        </div>
+    </div>
+
+    <!-- Página del concesionario -->
+    <div class="vehicle-container">
+        <!-- Vehículos 4 Puertas -->
+        <div id="fourDoors" class="vehicle-category">
+            <h3>4 Puertas</h3>
+            <div class="vehicles">
+                <div class="vehicle-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Vehículo 1">
+                    <h4>Honda Accord</h4>
+                    <p>$30,000</p>
+                </div>
+                <div class="vehicle-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Vehículo 2">
+                    <h4>BMW 3 Series</h4>
+                    <p>$40,000</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Vehículos 2 Puertas -->
+        <div id="twoDoors" class="vehicle-category">
+            <h3>2 Puertas</h3>
+            <div class="vehicles">
+                <div class="vehicle-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Vehículo 3">
+                    <h4>Chevrolet Camaro</h4>
+                    <p>$35,000</p>
+                </div>
+                <div class="vehicle-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Vehículo 4">
+                    <h4>Ford Mustang</h4>
+                    <p>$40,000</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Vehículos 4x4 -->
+        <div id="fourX4" class="vehicle-category">
+            <h3>4x4</h3>
+            <div class="vehicles">
+                <div class="vehicle-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Vehículo 5">
+                    <h4>Jeep Wrangler</h4>
+                    <p>$45,000</p>
+                </div>
+                <div class="vehicle-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Vehículo 6">
+                    <h4>Land Rover Defender</h4>
+                    <p>$50,000</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Vehículos Deportivos -->
+        <div id="sports" class="vehicle-category">
+            <h3>Deportivos</h3>
+            <div class="vehicles">
+                <div class="vehicle-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Vehículo 7">
+                    <h4>Ferrari 488</h4>
+                    <p>$200,000</p>
+                </div>
+                <div class="vehicle-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Vehículo 8">
+                    <h4>Lamborghini Huracán</h4>
+                    <p>$250,000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>
