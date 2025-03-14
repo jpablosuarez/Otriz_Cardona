@@ -1,4 +1,4 @@
-/* RESET DE ESTILOS */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -6,188 +6,502 @@
     font-family: 'Arial', sans-serif;
 }
 
-/* FONDO Y AMBIENTE RGB */
+/* Fondo general */
 body {
-    background-color: #121212;
-    color: #fff;
+    background: linear-gradient(135deg, #141414, #4b0082);
+    color: white;
+}
+
+/* HEADER */
+
+/* Importar la fuente Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+
+.logo {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    margin: 0;
-    position: relative;
-    animation: rgbBackground 5s infinite alternate;
+    gap: 10px; /* Espacio entre el logo y el texto */
 }
 
-@keyframes rgbBackground {
-    0% { background-color: #1b1b1b; }
-    25% { background-color: #2e2e2e; }
-    50% { background-color: #3a3a3a; }
-    75% { background-color: #2a2a2a; }
-    100% { background-color: #1b1b1b; }
+/* LOGO REDONDO */
+.logo img {
+    width: 50px; 
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Barra de navegación (Tipos de Vehículos) */
-.navbar {
-    width: 80%;
-    background-color: #232323;
-    padding: 15px 0;
-    text-align: center;
+/* TEXTO DEL LOGO */
+.logo-text {
+    font-size: 22px; /* Tamaño de fuente */
+    font-weight: bold;
+    color: white;
+    font-family: 'Montserrat', sans-serif; 
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVO: Ajustar en móviles */
+@media (max-width: 768px) {
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .logo-text {
+        font-size: 18px;
+    }
+}
+
+/* MENÚ DE NAVEGACIÓN */
+header {
     display: flex;
-    justify-content: center;
-    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.9);
+    position: sticky; /* 🔥 SOLUCIÓN: Se mantiene arriba sin cortar la pantalla */
     top: 0;
-    z-index: 10;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(155, 89, 182, 0.5);
 }
 
-.navbar ul {
+/* 🔹 SOLUCIÓN: Asegurar que el contenido nunca quede cortado */
+body {
+    min-height: 100vh; /*  Hace que el contenido siempre ocupe toda la pantalla */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 🔹 Espaciado automático para evitar que el menú tape el contenido */
+main {
+    flex: 1;
+}
+
+/* Estilos del menú */
+nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    align-items: center;
+    gap: 15px;
 }
 
-.navbar li {
+nav ul li {
     display: inline;
 }
 
-.navbar a {
-    color: #fff;
+/* Estilos de los enlaces del menú */
+nav ul li a {
     text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s;
+    padding: 12px 20px;
 }
 
-.navbar a:hover {
-    color: #9b4dff;
+/* RESPONSIVO: Ajustar el menú en pantallas pequeñas */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 12px;
+    }
 }
 
-/* Caja de Login y Registro */
-.login-box {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 30px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
-    text-align: center;
-    margin-bottom: 30px;
-}
 
-h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #fff;
-}
-
-input {
-    display: block;
-    width: 80%;
-    margin: 15px auto;
-    padding: 12px;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    background-color: #2a2a2a;
-    color: #fff;
-}
-
-input:focus {
-    outline: none;
-    border-color: #9b4dff;
-}
-
-.btn-submit {
-    background-color: #9b4dff;
-    color: #fff;
+/* BOTONES */
+/* BOTONES GENERALES (Inicio, Login, Registro) */
+.btn {
+    display: inline-block;
+    width: auto;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #6a0dad, #9b59b6);
+    color: white;
     border: none;
-    padding: 15px;
-    width: 80%;
-    border-radius: 5px;
+    border-radius: 50px; /* Bordes redondeados */
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 18px;
-    transition: transform 0.2s ease;
-    margin-top: 20px;
-}
-
-.btn-submit:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.5);
-}
-
-/* Estilos del Login y Registro */
-.login-container, .register-container, .welcome-container {
-    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(155, 89, 182, 0.5);
+    position: relative;
+    overflow: hidden;
     text-align: center;
-    padding: 50px;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-a {
-    color: #9b4dff;
     text-decoration: none;
 }
 
-a:hover {
-    color: #ffffff;
+/* Efecto de brillo al pasar el mouse */
+.btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
 }
 
-/* Agregar separación entre el texto de registrarse y el botón */
-.login-box p {
-    margin-top: 20px;
+.btn:hover::after {
+    left: 100%;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #9b59b6, #6a0dad);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(155, 89, 182, 0.7);
+}
+
+/* Botón secundario (por ejemplo, para "Registrarse") */
+.btn-secondary {
+    background: #444;
+}
+
+.btn-secondary:hover {
+    background: #666;
+}
+
+/* HERO de la página de inicio */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background: url('/IMg/img3.jfif') no-repeat center center/cover;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* SECCIONES GENERALES */
+.info-section {
+    padding: 50px 20px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /*  Uniformidad con el menú */
+}
+
+.info-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.info-section p {
     font-size: 16px;
+    max-width: 600px;
+    margin: auto;
 }
 
-/* Estilos de la página del concesionario */
-.vehicle-container {
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* FORMULARIOS (LOGIN & REGISTRO) */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+}
+
+.form-card {
+    background: #2e2e2e;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* CONTENEDOR DEL LOGO Y TEXTO EN LOGIN Y REGISTRO */
+.form-header {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    width: 100%;
-    max-width: 1200px;
-    margin-top: 100px; /* Ajustamos el margen para que no se solape con la barra de navegación */
-    padding: 0 20px;
-}
-
-/* Vehículos */
-.vehicle-category {
-    display: none;
-    margin-top: 30px;
-}
-
-.vehicles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.vehicle-card {
-    background-color: #2a2a2a;
-    border-radius: 10px;
-    padding: 20px;
+    align-items: center;
     text-align: center;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    margin-bottom: 20px;
 }
 
-.vehicle-card img {
+/* LOGO REDONDO EN LOGIN Y REGISTRO */
+.form-header .logo {
+    width: 80px; /* Tamaño más pequeño */
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+}
+
+/* TEXTO DEL LOGO EN LOGIN Y REGISTRO */
+.form-header h1 {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Montserrat', sans-serif; /*  Uniformidad con el menú */
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+/* RESPONSIVO: Ajuste en móviles */
+@media (max-width: 768px) {
+    .form-header .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .form-header h1 {
+        font-size: 18px;
+    }
+}
+
+.form {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    color: #d0d0d0;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #444;
+    color: white;
+    font-size: 14px;
+}
+
+.form input::placeholder {
+    color: #999;
+}
+
+.btn-form {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #6a0dad, #9b59b6);
+    color: white;
+    border: none;
+    border-radius: 50px; /* Bordes más redondeados */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(155, 89, 182, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de brillo al pasar el mouse */
+.btn-form::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+.btn-form:hover::after {
+    left: 100%;
+}
+
+.btn-form:hover {
+    background: linear-gradient(135deg, #9b59b6, #6a0dad);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(155, 89, 182, 0.7);
+}
+
+.form-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #d0d0d0;
+}
+
+.form-footer p {
+    margin: 10px 0;
+}
+
+.form-footer .link {
+    color: #9b59b6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Efecto de subrayado animado */
+.form-footer .link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #9b59b6;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.form-footer .link:hover::after {
+    transform: scaleX(1);
+}
+
+.form-footer .link:hover {
+    color: #c084f5;
+}
+
+/* HERO del dashboard */
+.hero-dashboard {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background: url('dashboard-bg.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+.hero-dashboard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-dashboard .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* GRID de autos en venta */
+.autos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Tarjetas de autos */
+.auto-card {
+    background: #333;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.auto-card img {
     width: 100%;
     border-radius: 10px;
 }
 
-.vehicle-card h4 {
-    margin-top: 10px;
-    color: #fff;
-    font-size: 18px;
+.auto-card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #9b59b6;
 }
 
-.vehicle-card p {
-    color: #fff;
-    font-size: 16px;
-    margin-top: 10px;
+.auto-card p {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 10px;
 }
 
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .form-card {
+        padding: 15px 20px;
+    }
+
+    .form-header h1 {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
+
+/* Ajustes textos e imagenes de servicios */
+
+.box-services{
+    display: flex;
+    padding: 50px;
+    margin-top: 20px;
+}
+.box-services p {
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif; /*  Uniformidad con el menú */
+    margin-right: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.background{
+    background: linear-gradient(10deg,#4b0082, #141414);
+    padding-top: 30px;
+}
+.box-services img{
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); 
+}
+.box-services .img1{
+  border: 3px solid black;
+  margin-top: -10px;
+  margin-left: -20px;
+  margin-right: 42px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+}
