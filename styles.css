@@ -70,7 +70,7 @@ header {
 
 /* 🔹 SOLUCIÓN: Asegurar que el contenido nunca quede cortado */
 body {
-    min-height: 100vh; /* 🔥 Hace que el contenido siempre ocupe toda la pantalla */
+    min-height: 100vh; /*  Hace que el contenido siempre ocupe toda la pantalla */
     display: flex;
     flex-direction: column;
 }
@@ -211,6 +211,7 @@ nav ul li a {
 .info-section {
     padding: 50px 20px;
     text-align: center;
+    font-family: 'Montserrat', sans-serif; /*  Uniformidad con el menú */
 }
 
 .info-section h2 {
@@ -277,7 +278,7 @@ footer {
     font-size: 22px;
     font-weight: bold;
     color: white;
-    font-family: 'Montserrat', sans-serif; /* 🔥 Uniformidad con el menú */
+    font-family: 'Montserrat', sans-serif; /*  Uniformidad con el menú */
     letter-spacing: 1px;
     margin-top: 10px;
 }
@@ -475,4 +476,32 @@ footer {
     .btn {
         font-size: 14px;
     }
+}
+
+/* Ajustes textos e imagenes de servicios */
+
+.box-services{
+    display: flex;
+    padding: 50px;
+    margin-top: 20px;
+}
+.box-services p {
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif; /*  Uniformidad con el menú */
+    margin-right: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.background{
+    background: linear-gradient(10deg,#4b0082, #141414);
+    padding-top: 30px;
+}
+.box-services img{
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5); 
+}
+.box-services .img1{
+  border: 3px solid black;
+  margin-top: -10px;
+  margin-left: -20px;
+  margin-right: 42px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
 }
